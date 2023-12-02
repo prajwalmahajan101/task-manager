@@ -9,18 +9,23 @@ import { UsersModule } from './users/users.module';
 import { TasksModule } from './tasks/tasks.module';
 import { TeamsModule } from './teams/teams.module';
 import { MembersModule } from './members/members.module';
+import { Task } from './tasks/task.entity';
+import { Member } from './members/member.entity';
+import { Team } from './teams/team.entity';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
       port: 3306,
       username: process.env.DB_USERNAME ?? 'root',
       password: process.env.DB_PASSWORD ?? 'root',
-      database: 'test',
-      entities: [],
+      database: 'db',
+      entities: [Task, Member, Team],
       synchronize: true,
     }),
     AuthModule,
