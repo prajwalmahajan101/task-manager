@@ -1,8 +1,27 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { InsertResult, Repository } from 'typeorm';
 import { Team } from './team.entity';
-import { MembersService } from '../members/members.service';
+import {
+  CreateMembersReturnType,
+  CreateMembersType,
+  MembersService,
+} from '../members/members.service';
+import { Member } from '../members/member.entity';
+
+export type CreateTeamType = {
+  name: string;
+};
+
+export type CreateTeamReturnType = {
+  name: string;
+  members: CreateMembersReturnType;
+};
+
 @Injectable()
 export class TeamsService {
   constructor(
@@ -10,22 +29,27 @@ export class TeamsService {
     private membersService: MembersService,
   ) {}
 
-  async create(name: string, members: { name: string }[]): Promise<any> {
-    const team = {
-      name,
-    };
-    const ak = await this.tasksRepository.insert(team);
-    const id = ak.generatedMaps[0].id;
-    const teamCreated: Team = await this.tasksRepository.findOneBy({ id });
-    const membersData = await this.membersService.createMultiple(
-      members,
-      teamCreated,
-    );
-    return { ...team, members: membersData };
+  async create(
+    name: string,
+    members: CreateMembersType,
+  ): Promise<CreateTeamReturnType> {
+    try {
+      const team: CreateTeamType = {
+        name,
+      };
+      const ak: InsertResult = await this.tasksRepository.insert(team);
+      const id: number = ak.generatedMaps[0].id;
+      const teamCreated: Team = await this.tasksRepository.findOneBy({ id });
+      const membersData: CreateMembersReturnType =
+        await this.membersService.createMultiple(members, teamCreated);
+      return { ...team, members: membersData };
+    } catch (e) {
+      throw new BadRequestException(e);
+    }
   }
 
-  async getMembers(id: number) {
-    const team = await this.tasksRepository.findOne({
+  async getMembers(id: number): Promise<Member[]> {
+    const team: Team = await this.tasksRepository.findOne({
       where: { id },
       relations: ['members'],
     });

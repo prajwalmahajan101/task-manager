@@ -6,8 +6,9 @@ export const StatusTypes: IStatus = {
   NotStarted: 'not-started',
 };
 
-type keyType = 'Completed' | 'InProgress' | 'NotStarted';
-type IStatus = {
+export type keyType = 'Completed' | 'InProgress' | 'NotStarted';
+export type valueType = 'completed' | 'in-progress' | 'not-started';
+export type IStatus = {
   [key in keyType]: 'completed' | 'in-progress' | 'not-started';
 };
 
