@@ -8,44 +8,47 @@ import {
   Post,
   UseGuards,
 } from '@nestjs/common';
-import * as dayjs from 'dayjs';
-import { CreateTasksReturnType, TasksService } from './tasks.service';
+import {
+  CreateTasksReturnType,
+  CreateTasksType,
+  TasksService,
+} from './tasks.service';
 import { AuthGuard } from '../auth/auth.guard';
-import * as customParseFormat from 'dayjs/plugin/customParseFormat';
 import { StatusTypes, Task } from './task.entity';
-dayjs.extend(customParseFormat);
+import { CreateTaskMultipleDto } from './dto/createTaskMultipleDto';
+import { CreateTaskDto } from './dto/createTaskDto';
+import { AssignTaskDto } from './dto/assignTaskDto';
 @Controller('tasks')
 @UseGuards(AuthGuard)
 export class TasksController {
   constructor(private tasksServices: TasksService) {}
 
   @Post('/')
-  async create(@Body() createTaskDto: Record<string, any>): Promise<Task> {
-    //TODO: Add Validation
-    const dueDate = dayjs(createTaskDto.dueDate, 'DD-MM-YYYY');
+  async create(@Body() createTaskDto: CreateTaskDto): Promise<Task> {
+    const dueDate: Date = new Date(createTaskDto.dueDate);
     return await this.tasksServices.create(
       createTaskDto.description,
-      new Date(dueDate.toString()),
+      dueDate,
       createTaskDto.assignee ?? undefined,
     );
   }
 
   @Post('/create')
   async createMultiple(
-    @Body() createTaskMultipleDto: Record<string, any>,
+    @Body() createTaskMultipleDto: CreateTaskMultipleDto,
   ): Promise<CreateTasksReturnType[]> {
-    //TODO: Add Validation
-    const tasks = createTaskMultipleDto.tasks.map((task) => ({
-      ...task,
-      assigneeID: task.assignee,
-      dueDate: new Date(dayjs(task.dueDate, 'DD-MM-YYYY').toString()),
-    }));
+    const tasks: CreateTasksType[] = createTaskMultipleDto.tasks.map(
+      (task) => ({
+        ...task,
+        assigneeID: task.assignee,
+        dueDate: new Date(task.dueDate),
+      }),
+    );
     return await this.tasksServices.createMany(tasks);
   }
 
   @Post('/assign')
-  async assign(@Body() assignTaskDto: Record<string, any>): Promise<Task> {
-    //TODO: Add Validation
+  async assign(@Body() assignTaskDto: AssignTaskDto): Promise<Task> {
     return await this.tasksServices.assign(
       assignTaskDto.taskId,
       assignTaskDto.assignee,
@@ -62,14 +65,12 @@ export class TasksController {
     @Param('id') id: number,
     @Body() updateTaskDto: Record<string, any>,
   ): Promise<Task> {
-    //TODO: Add Validation
+    // TODO: Validate Body
     const data: Partial<Task> = {};
     if (updateTaskDto.description)
       data['description'] = updateTaskDto.description;
     if (updateTaskDto.dueDate)
-      data['dueDate'] = new Date(
-        dayjs(updateTaskDto.dueDate, 'DD-MM-YYYY').toString(),
-      );
+      data['dueDate'] = new Date(updateTaskDto.dueDate);
     if (updateTaskDto.status) {
       const status = updateTaskDto.status.toLowerCase();
       switch (status) {
