@@ -18,6 +18,7 @@ import { StatusTypes, Task } from './task.entity';
 import { CreateTaskMultipleDto } from './dto/createTaskMultipleDto';
 import { CreateTaskDto } from './dto/createTaskDto';
 import { AssignTaskDto } from './dto/assignTaskDto';
+import { UpdateTaskDto } from './dto/updateTaskDto';
 @Controller('tasks')
 @UseGuards(AuthGuard)
 export class TasksController {
@@ -67,9 +68,8 @@ export class TasksController {
   @Patch('/:id')
   async update(
     @Param('id') id: number,
-    @Body() updateTaskDto: Record<string, any>,
+    @Body() updateTaskDto: UpdateTaskDto,
   ): Promise<Task> {
-    // TODO: Validate Body
     if (isNaN(id))
       throw new BadRequestException({
         message: 'Task id (Param) must be a number',
@@ -77,8 +77,9 @@ export class TasksController {
     const data: Partial<Task> = {};
     if (updateTaskDto.description)
       data['description'] = updateTaskDto.description;
-    if (updateTaskDto.dueDate)
+    if (updateTaskDto.dueDate) {
       data['dueDate'] = new Date(updateTaskDto.dueDate);
+    }
     if (updateTaskDto.status) {
       const status = updateTaskDto.status.toLowerCase();
       switch (status) {
