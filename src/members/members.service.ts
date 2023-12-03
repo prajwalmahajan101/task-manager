@@ -83,7 +83,7 @@ export class MembersService {
 
     if (!member) {
       throw new NotFoundException({
-        message: `Member with id : ${id} not found`,
+        message: `Member with id ${id} not found`,
       });
     }
     return member.tasks;

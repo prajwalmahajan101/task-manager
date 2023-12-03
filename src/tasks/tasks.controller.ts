@@ -83,7 +83,6 @@ export class TasksController {
     @Param('id') id: number,
     @Body() updateTaskDto: UpdateTaskDto,
   ): Promise<Task> {
-    console.log(id);
     if (isNaN(id))
       throw new BadRequestException({
         message: 'Task id (Param) must be a number',

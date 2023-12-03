@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"description\":\"Test Task 9\",\r\n    \"dueDate\":\"2023-12-31\"\r\n}",
+							"raw": "{\r\n    \"description\":\"Test Task 21\",\r\n    \"dueDate\":\"2023-12-31\",\r\n    \"assginee\":6\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -34,7 +34,374 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Create Task",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\":\"Test Task 15\",\r\n    \"dueDate\":\"2023-12-31\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "114"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"72-dCXHXHE9FzHY8KkvmJRSNMqS3qQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 07:54:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 15,\n    \"description\": \"Test Task 15\",\n    \"dueDate\": \"2023-12-31T00:00:00.000Z\",\n    \"status\": \"not-started\",\n    \"assignee\": null\n}"
+						},
+						{
+							"name": "Create Task",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\":\"Test Task 15\",\r\n    \"dueDate\":\"2023-12-31\",\r\n    \"assignee\":3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "141"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8d-ZOoeSLeHlUch2MZfG81bOaDh5M0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 07:54:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 16,\n    \"description\": \"Test Task 15\",\n    \"dueDate\": \"2023-12-31T00:00:00.000Z\",\n    \"status\": \"not-started\",\n    \"assignee\": {\n        \"id\": 3,\n        \"name\": \"Prajwal:Dev:3\"\n    }\n}"
+						},
+						{
+							"name": "Create Task",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"Test Task 15\",\r\n    \"dueDate\": \"2023-13-31\",\r\n    \"assignee\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "99"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"63-iHzWNZPRNHpU2G7G+LwUNCabNLQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 07:55:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": [\n        \"dueDate must be a valid ISO 8601 date string\"\n    ],\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+						},
+						{
+							"name": "Create Task",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"dueDate\": \"2023-12-31\",\r\n    \"assignee\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "83"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"53-Ib+jhzz9FomKym3aPkBv5Y+5XcM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 07:56:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": [\n        \"description must be a string\"\n    ],\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+						},
+						{
+							"name": "Create Task",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\":\"Test Task 15\",\r\n    \"dueDate\":\"2023-12-31\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-dGnJzt6gv1nJjX6DJ9RztDWptng\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:07:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized\",\n    \"statusCode\": 401\n}"
+						},
+						{
+							"name": "Create Task",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\":\"Test Task 15\",\r\n    \"dueDate\":\"2023-12-31\",\r\n    \"assginee\":111\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "114"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"72-8kkokFEdATS7XI+sXK2fOzPSHbc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:21:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 19,\n    \"description\": \"Test Task 15\",\n    \"dueDate\": \"2023-12-31T00:00:00.000Z\",\n    \"status\": \"not-started\",\n    \"assignee\": null\n}"
+						}
+					]
 				},
 				{
 					"name": "Create Multiple Tasks",
@@ -43,7 +410,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"tasks\": [\r\n        {\r\n            \"description\": \"Test Task 1\",\r\n            \"dueDate\": \"2023-12-09\",\r\n            \"assignee\": 1\r\n        },\r\n        {\r\n            \"description\": \"Test Task 2\",\r\n            \"dueDate\": \"2023-12-09\"\r\n        },\r\n        {\r\n            \"description\": \"Test Task 3\",\r\n            \"dueDate\": \"2023-12-09\"\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"tasks\": [\r\n        {\r\n            \"description\": \"Test Task 17\",\r\n            \"dueDate\": \"2023-12-09\",\r\n            \"assignee\": 1\r\n        },\r\n        {\r\n            \"description\": \"Test Task 18\",\r\n            \"dueDate\": \"2023-12-09\"\r\n        },\r\n        {\r\n            \"description\": \"Test Task 19\",\r\n            \"dueDate\": \"2023-12-09\"\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -61,7 +428,313 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Create Multiple Tasks",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tasks\": [\r\n        {\r\n            \"description\": \"Test Task 17\",\r\n            \"dueDate\": \"2023-12-09\",\r\n            \"assignee\": 1\r\n        },\r\n        {\r\n            \"description\": \"Test Task 18\",\r\n            \"dueDate\": \"2023-12-09\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "257"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"101-0p0FWucevxiDe71pbODajW65lAo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 07:57:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"description\": \"Test Task 17\",\n        \"dueDate\": \"2023-12-09T00:00:00.000Z\",\n        \"assignee\": {\n            \"id\": 1,\n            \"name\": \"Prajwal:Dev:1\"\n        },\n        \"assigneeID\": 1,\n        \"id\": 17,\n        \"status\": \"not-started\"\n    },\n    {\n        \"description\": \"Test Task 18\",\n        \"dueDate\": \"2023-12-09T00:00:00.000Z\",\n        \"id\": 18,\n        \"status\": \"not-started\"\n    }\n]"
+						},
+						{
+							"name": "Create Multiple Tasks",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tasks\": [\r\n        {\r\n            \"dueDate\": \"2023-12-09\",\r\n            \"assignee\": 1\r\n        },\r\n        {\r\n            \"description\": \"Test Task 19\",\r\n            \"dueDate\": \"2023-12-09\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "91"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5b-gTP29as8i+m70nGs82ebiDO3mMM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 07:57:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": [\n        \"tasks.0.description must be a string\"\n    ],\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+						},
+						{
+							"name": "Create Multiple Tasks",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tasks\": [\r\n        {\r\n            \"dueDate\": \"2023-12-09\",\r\n            \"assignee\": 1\r\n        },\r\n        {\r\n            \"description\": \"Test Task 19\",\r\n            \"dueDate\": \"2023-13-09\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "146"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"92-y5EUvdAPmnBB8vplU/aO6WWJebI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 07:57:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": [\n        \"tasks.0.description must be a string\",\n        \"tasks.1.dueDate must be a valid ISO 8601 date string\"\n    ],\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+						},
+						{
+							"name": "Create Multiple Tasks",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tasks\": [\r\n        {\r\n            \"description\": \"Test Task 17\",\r\n            \"dueDate\": \"2023-12-09\",\r\n            \"assignee\": 1\r\n        },\r\n        {\r\n            \"description\": \"Test Task 18\",\r\n            \"dueDate\": \"2023-12-09\"\r\n        },\r\n        {\r\n            \"description\": \"Test Task 19\",\r\n            \"dueDate\": \"2023-12-09\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										"create"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-dGnJzt6gv1nJjX6DJ9RztDWptng\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:07:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized\",\n    \"statusCode\": 401\n}"
+						},
+						{
+							"name": "Create Multiple Tasks",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tasks\": [\r\n        {\r\n            \"description\": \"Test Task 17\",\r\n            \"dueDate\": \"2023-12-09\",\r\n            \"assignee\": 111\r\n        },\r\n        {\r\n            \"description\": \"Test Task 18\",\r\n            \"dueDate\": \"2023-12-09\"\r\n        },\r\n        {\r\n            \"description\": \"Test Task 19\",\r\n            \"dueDate\": \"2023-12-09\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										"create"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-nSppQYI/0uXfInkJus6tU3XgJ04\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:20:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Member with id 111  not found\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Assign/Reassign Task to A Team Member",
@@ -70,7 +743,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"assignee\":1\r\n}",
+							"raw": "{\r\n    \"assignee\": 5\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -90,12 +763,421 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "5"
+									"value": "18"
 								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Assign/Reassign Task to A Team Member",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"assignee\":5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/:id/assign",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										":id",
+										"assign"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "18"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "141"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8d-zYD0+oI9FlAZ+GQiXuh+2M9pKJQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 07:59:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 18,\n    \"description\": \"Test Task 18\",\n    \"dueDate\": \"2023-12-09T00:00:00.000Z\",\n    \"status\": \"not-started\",\n    \"assignee\": {\n        \"id\": 5,\n        \"name\": \"Prajwal:Dev:2\"\n    }\n}"
+						},
+						{
+							"name": "Assign/Reassign Task to A Team Member",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"assignee\":5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/:id/assign",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										":id",
+										"assign"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "18sdfsdf"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-/9I+Tt5cua3/NEVVN0iVB30r15o\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 07:59:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Task id (Param) must be a number\"\n}"
+						},
+						{
+							"name": "Assign/Reassign Task to A Team Member",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"assignee\":5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/:id/assign",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										":id",
+										"assign"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-k5yaonzdvdy5WsiFydsgulD07Yg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 07:59:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Task not Found\"\n}"
+						},
+						{
+							"name": "Assign/Reassign Task to A Team Member",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"assignee\":111\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/:id/assign",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										":id",
+										"assign"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "18"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20-TS/EjUsbUqq2Wi0c8dITIFX7FoI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:00:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Assignee not Found\"\n}"
+						},
+						{
+							"name": "Assign/Reassign Task to A Team Member",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"assignee\":\"Asdasdasd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/:id/assign",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										":id",
+										"assign"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "18"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "120"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"78-upIOTLhhXsQLouMX0HVP4ltGuXc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:00:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": [\n        \"assignee must be a number conforming to the specified constraints\"\n    ],\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+						},
+						{
+							"name": "Assign/Reassign Task to A Team Member",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"assignee\": 5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/:id/assign",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										":id",
+										"assign"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "18"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-dGnJzt6gv1nJjX6DJ9RztDWptng\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:07:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized\",\n    \"statusCode\": 401\n}"
+						}
+					]
 				},
 				{
 					"name": "Get All tasks with there Assignee",
@@ -113,7 +1195,112 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get All tasks with there Assignee",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/tasks/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2291"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8f3-S8/0OgV3yBYgnVZSkuEmiEzZ+SA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:01:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"description\": \"Test Task 1\",\n        \"dueDate\": \"2023-12-06T00:00:00.000Z\",\n        \"status\": \"completed\",\n        \"assignee\": null\n    },\n    {\n        \"id\": 2,\n        \"description\": \"Test Task 1\",\n        \"dueDate\": \"2024-02-08T18:30:00.000Z\",\n        \"status\": \"not-started\",\n        \"assignee\": null\n    },\n    {\n        \"id\": 3,\n        \"description\": \"Test Task 1\",\n        \"dueDate\": \"2023-12-02T00:00:00.000Z\",\n        \"status\": \"not-started\",\n        \"assignee\": null\n    },\n    {\n        \"id\": 4,\n        \"description\": \"Test Task 1\",\n        \"dueDate\": \"2023-12-09T00:00:00.000Z\",\n        \"status\": \"not-started\",\n        \"assignee\": {\n            \"id\": 1,\n            \"name\": \"Prajwal:Dev:1\"\n        }\n    },\n    {\n        \"id\": 5,\n        \"description\": \"Test Task 2\",\n        \"dueDate\": \"2023-12-09T00:00:00.000Z\",\n        \"status\": \"not-started\",\n        \"assignee\": {\n            \"id\": 1,\n            \"name\": \"Prajwal:Dev:1\"\n        }\n    },\n    {\n        \"id\": 6,\n        \"description\": \"Test Task 3\",\n        \"dueDate\": \"2023-12-09T00:00:00.000Z\",\n        \"status\": \"not-started\",\n        \"assignee\": {\n            \"id\": 1,\n            \"name\": \"Prajwal:Dev:1\"\n        }\n    },\n    {\n        \"id\": 7,\n        \"description\": \"Test Task 9\",\n        \"dueDate\": \"2023-12-31T00:00:00.000Z\",\n        \"status\": \"not-started\",\n        \"assignee\": null\n    },\n    {\n        \"id\": 8,\n        \"description\": \"Test Task 9\",\n        \"dueDate\": \"2023-12-31T00:00:00.000Z\",\n        \"status\": \"not-started\",\n        \"assignee\": null\n    },\n    {\n        \"id\": 9,\n        \"description\": \"Test Task 1\",\n        \"dueDate\": \"2023-12-09T00:00:00.000Z\",\n        \"status\": \"not-started\",\n        \"assignee\": {\n            \"id\": 1,\n            \"name\": \"Prajwal:Dev:1\"\n        }\n    },\n    {\n        \"id\": 10,\n        \"description\": \"Test Task 2\",\n        \"dueDate\": \"2023-12-09T00:00:00.000Z\",\n        \"status\": \"not-started\",\n        \"assignee\": null\n    },\n    {\n        \"id\": 11,\n        \"description\": \"Test Task 3\",\n        \"dueDate\": \"2023-12-09T00:00:00.000Z\",\n        \"status\": \"not-started\",\n        \"assignee\": null\n    },\n    {\n        \"id\": 12,\n        \"description\": \"Test Task 9\",\n        \"dueDate\": \"2023-12-31T00:00:00.000Z\",\n        \"status\": \"not-started\",\n        \"assignee\": null\n    },\n    {\n        \"id\": 13,\n        \"description\": \"Test Task 10\",\n        \"dueDate\": \"2023-12-31T00:00:00.000Z\",\n        \"status\": \"not-started\",\n        \"assignee\": {\n            \"id\": 2,\n            \"name\": \"Prajwal:Dev:2\"\n        }\n    },\n    {\n        \"id\": 14,\n        \"description\": \"Test Task 10\",\n        \"dueDate\": \"2023-12-31T00:00:00.000Z\",\n        \"status\": \"not-started\",\n        \"assignee\": {\n            \"id\": 2,\n            \"name\": \"Prajwal:Dev:2\"\n        }\n    },\n    {\n        \"id\": 15,\n        \"description\": \"Test Task 15\",\n        \"dueDate\": \"2023-12-31T00:00:00.000Z\",\n        \"status\": \"not-started\",\n        \"assignee\": null\n    },\n    {\n        \"id\": 16,\n        \"description\": \"Test Task 15\",\n        \"dueDate\": \"2023-12-31T00:00:00.000Z\",\n        \"status\": \"not-started\",\n        \"assignee\": {\n            \"id\": 3,\n            \"name\": \"Prajwal:Dev:3\"\n        }\n    },\n    {\n        \"id\": 17,\n        \"description\": \"Test Task 17\",\n        \"dueDate\": \"2023-12-09T00:00:00.000Z\",\n        \"status\": \"not-started\",\n        \"assignee\": {\n            \"id\": 1,\n            \"name\": \"Prajwal:Dev:1\"\n        }\n    },\n    {\n        \"id\": 18,\n        \"description\": \"Test Task 18\",\n        \"dueDate\": \"2023-12-09T00:00:00.000Z\",\n        \"status\": \"not-started\",\n        \"assignee\": {\n            \"id\": 5,\n            \"name\": \"Prajwal:Dev:2\"\n        }\n    }\n]"
+						},
+						{
+							"name": "Get All tasks with there Assignee",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/tasks/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-dGnJzt6gv1nJjX6DJ9RztDWptng\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:08:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized\",\n    \"statusCode\": 401\n}"
+						}
+					]
 				},
 				{
 					"name": "Update Task",
@@ -122,7 +1309,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"dueDate\":\"2023-12-06\",\r\n    \"status\":\"COMPLETED\"\r\n}",
+							"raw": "{\r\n    \"description\": \"Task updated\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -141,12 +1328,482 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "1"
+									"value": "18"
 								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Update Task",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"dueDate\":\"2023-12-31\",\r\n    \"status\":\"COMPLETED\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "18"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "139"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8b-ZoixDmfNou2Enjen5R4qaxJ01Qs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:03:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 18,\n    \"description\": \"Test Task 18\",\n    \"dueDate\": \"2023-12-31T00:00:00.000Z\",\n    \"status\": \"completed\",\n    \"assignee\": {\n        \"id\": 5,\n        \"name\": \"Prajwal:Dev:2\"\n    }\n}"
+						},
+						{
+							"name": "Update Task",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\":\"not-started\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "18"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "141"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8d-ZrKbkICNOnvSxEDTd7Q+TSQJkLQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:04:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 18,\n    \"description\": \"Test Task 18\",\n    \"dueDate\": \"2023-12-31T00:00:00.000Z\",\n    \"status\": \"not-started\",\n    \"assignee\": {\n        \"id\": 5,\n        \"name\": \"Prajwal:Dev:2\"\n    }\n}"
+						},
+						{
+							"name": "Update Task",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\":\"not-started\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "18asdasd"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-/9I+Tt5cua3/NEVVN0iVB30r15o\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:04:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Task id (Param) must be a number\"\n}"
+						},
+						{
+							"name": "Update Task",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\":\"not-started\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27-/yLzyTx72PIpEhXVYefWHXVQ1cM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:04:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Task with id 20 not found\"\n}"
+						},
+						{
+							"name": "Update Task",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\":\"started\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "18"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-UbcP/NOgE4c52FM0R42MeYQVp00\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:05:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid status for task update\"\n}"
+						},
+						{
+							"name": "Update Task",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "18"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "83"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"53-Ib+jhzz9FomKym3aPkBv5Y+5XcM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:05:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": [\n        \"description must be a string\"\n    ],\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+						},
+						{
+							"name": "Update Task",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"Task updated\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/tasks/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "18"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-dGnJzt6gv1nJjX6DJ9RztDWptng\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:08:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized\",\n    \"statusCode\": 401\n}"
+						}
+					]
 				},
 				{
 					"name": "Get Task With Id",
@@ -170,7 +1827,240 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get Task With Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/tasks/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "110"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6e-EyiycjMOIBZyhPJhSh0EBC+2XxY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:01:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"description\": \"Test Task 1\",\n    \"dueDate\": \"2023-12-06T00:00:00.000Z\",\n    \"status\": \"completed\",\n    \"assignee\": null\n}"
+						},
+						{
+							"name": "Get Task With Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/tasks/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1asd"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-/9I+Tt5cua3/NEVVN0iVB30r15o\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:01:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Task id (Param) must be a number\"\n}"
+						},
+						{
+							"name": "Get Task With Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/tasks/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "111"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28-jce0NRUD3ecdpTAUhGpDHmsyhXU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:02:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Task with id 111 Not found\"\n}"
+						},
+						{
+							"name": "Get Task With Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/tasks/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-dGnJzt6gv1nJjX6DJ9RztDWptng\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:08:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized\",\n    \"statusCode\": 401\n}"
+						}
+					]
 				}
 			],
 			"auth": {
@@ -214,7 +2104,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"Development\",\r\n    \"members\":[\r\n        {\r\n            \"name\":\"Prajwal:Dev:1\"\r\n        },\r\n        {\r\n            \"name\":\"Prajwal:Dev:2\"\r\n        },\r\n        {\r\n            \"name\":\"Prajwal:Dev:3\"\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"name\":\"Development 4\",\r\n    \"members\":[\r\n        {\r\n            \"name\":\"Prajwal:Dev4:1\"\r\n        },\r\n        {\r\n            \"name\":\"Prajwal:Dev4:2\"\r\n        },\r\n        {\r\n            \"name\":\"Prajwal:Dev4:3\"\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -232,7 +2122,252 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Create New Team with new Members",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Development 3\",\r\n    \"members\":[\r\n        {\r\n            \"name\":\"Prajwal:Dev3:1\"\r\n        },\r\n        {\r\n            \"name\":\"Prajwal:Dev3:2\"\r\n        },\r\n        {\r\n            \"name\":\"Prajwal:Dev3:3\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/teams/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teams",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "142"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8e-CKpTEAN9/nzH+3nNtfNyBTseiiQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:18:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Development 3\",\n    \"id\": 3,\n    \"members\": [\n        {\n            \"name\": \"Prajwal:Dev3:1\",\n            \"id\": 7\n        },\n        {\n            \"name\": \"Prajwal:Dev3:2\",\n            \"id\": 8\n        },\n        {\n            \"name\": \"Prajwal:Dev3:3\",\n            \"id\": 9\n        }\n    ]\n}"
+						},
+						{
+							"name": "Create New Team with new Members",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Development 3\",\r\n    \"members\":[\r\n        {\r\n            \"name\": 1\r\n        },\r\n        {\r\n            \"name\":\"Prajwal:Dev3:2\"\r\n        },\r\n        {\r\n            \"name\":\"Prajwal:Dev3:3\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/teams/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teams",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "86"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"56-x6kAI9XH7ssSBd3DiNoMBmhiFX8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:19:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": [\n        \"members.0.name must be a string\"\n    ],\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+						},
+						{
+							"name": "Create New Team with new Members",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":1,\r\n    \"members\":[\r\n        {\r\n            \"name\":\"Prajwal:Dev3:1\"\r\n        },\r\n        {\r\n            \"name\":\"Prajwal:Dev3:2\"\r\n        },\r\n        {\r\n            \"name\":\"Prajwal:Dev3:3\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/teams/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teams",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "76"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4c-OAcXBBy5WnEwGJ/iPFrjt6tWieY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:19:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": [\n        \"name must be a string\"\n    ],\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+						},
+						{
+							"name": "Create New Team with new Members",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Development 3\",\r\n    \"members\":[\r\n        {\r\n            \"name\":\"Prajwal:Dev3:1\"\r\n        },\r\n        {\r\n            \"name\":\"Prajwal:Dev3:2\"\r\n        },\r\n        {\r\n            \"name\":\"Prajwal:Dev3:3\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/teams/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teams",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-dGnJzt6gv1nJjX6DJ9RztDWptng\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:19:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized\",\n    \"statusCode\": 401\n}"
+						}
+					]
 				},
 				{
 					"name": "Get  Members of a Team",
@@ -257,7 +2392,244 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get  Members of a Team",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teams/:id/members",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teams",
+										":id",
+										"members"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "97"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"61-/9ya2sIeAHcku4/aEBYTjux6fjE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:13:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Prajwal:Dev:1\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Prajwal:Dev:2\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Prajwal:Dev:3\"\n    }\n]"
+						},
+						{
+							"name": "Get  Members of a Team",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teams/:id/members",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teams",
+										":id",
+										"members"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1asd"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-IIabXKijZEqF02dXFOlb38eZ1HA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:13:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Team id (Param) must be a number\"\n}"
+						},
+						{
+							"name": "Get  Members of a Team",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teams/:id/members",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teams",
+										":id",
+										"members"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-a/oht7ASvQVzKnd11nKIg1UUio8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:14:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Team with id 5 Not Found\"\n}"
+						},
+						{
+							"name": "Get  Members of a Team",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teams/:id/members",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teams",
+										":id",
+										"members"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-dGnJzt6gv1nJjX6DJ9RztDWptng\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:15:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized\",\n    \"statusCode\": 401\n}"
+						}
+					]
 				},
 				{
 					"name": "Get Team Details",
@@ -281,7 +2653,240 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get Team Details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teams/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teams",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "137"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"89-rLqW4/VcI+EP3lyDRyWYPAWmrWo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:15:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"Development\",\n    \"members\": [\n        {\n            \"id\": 1,\n            \"name\": \"Prajwal:Dev:1\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Prajwal:Dev:2\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Prajwal:Dev:3\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Get Team Details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teams/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teams",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1asd"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-IIabXKijZEqF02dXFOlb38eZ1HA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:15:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Team id (Param) must be a number\"\n}"
+						},
+						{
+							"name": "Get Team Details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teams/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teams",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-Tg+IXVAfa/q8zPn74N/pQ6syHTg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:15:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Team with id 5 not Found\"\n}"
+						},
+						{
+							"name": "Get Team Details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teams/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teams",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-dGnJzt6gv1nJjX6DJ9RztDWptng\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:15:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized\",\n    \"statusCode\": 401\n}"
+						}
+					]
 				},
 				{
 					"name": "Get All teams with Members",
@@ -299,7 +2904,112 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get All teams with Members",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teams/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teams",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "277"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"115-sT8Z/xiZOXwxk1O1YtEii2gJLf8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:16:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Development\",\n        \"members\": [\n            {\n                \"id\": 3,\n                \"name\": \"Prajwal:Dev:3\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Prajwal:Dev:2\"\n            },\n            {\n                \"id\": 1,\n                \"name\": \"Prajwal:Dev:1\"\n            }\n        ]\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Development\",\n        \"members\": [\n            {\n                \"id\": 6,\n                \"name\": \"Prajwal:Dev:3\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"Prajwal:Dev:2\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"Prajwal:Dev:1\"\n            }\n        ]\n    }\n]"
+						},
+						{
+							"name": "Get All teams with Members",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teams/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teams",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-dGnJzt6gv1nJjX6DJ9RztDWptng\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:16:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized\",\n    \"statusCode\": 401\n}"
+						}
+					]
 				}
 			],
 			"auth": {
@@ -359,7 +3069,244 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get All Task For the Assignee",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/members/:id/tasks",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"members",
+										":id",
+										"tasks"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "488"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e8-Uz3Uk8GI45KSDoyDuwuXVMiFLhQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:10:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 4,\n        \"description\": \"Test Task 1\",\n        \"dueDate\": \"2023-12-09T00:00:00.000Z\",\n        \"status\": \"not-started\"\n    },\n    {\n        \"id\": 5,\n        \"description\": \"Test Task 2\",\n        \"dueDate\": \"2023-12-09T00:00:00.000Z\",\n        \"status\": \"not-started\"\n    },\n    {\n        \"id\": 6,\n        \"description\": \"Test Task 3\",\n        \"dueDate\": \"2023-12-09T00:00:00.000Z\",\n        \"status\": \"not-started\"\n    },\n    {\n        \"id\": 9,\n        \"description\": \"Test Task 1\",\n        \"dueDate\": \"2023-12-09T00:00:00.000Z\",\n        \"status\": \"not-started\"\n    },\n    {\n        \"id\": 17,\n        \"description\": \"Test Task 17\",\n        \"dueDate\": \"2023-12-09T00:00:00.000Z\",\n        \"status\": \"not-started\"\n    }\n]"
+						},
+						{
+							"name": "Get All Task For the Assignee",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/members/:id/tasks",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"members",
+										":id",
+										"tasks"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1asd"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"30-c1OE2x8fMihn1Ipbr2btUGBzvYA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:10:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Member id (Param) must be a number\"\n}"
+						},
+						{
+							"name": "Get All Task For the Assignee",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/members/:id/tasks",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"members",
+										":id",
+										"tasks"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "19"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29-F9q1H4fRc+eGFdjtf+pdb9iVknw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:10:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Member with id 19 not found\"\n}"
+						},
+						{
+							"name": "Get All Task For the Assignee",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/members/:id/tasks",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"members",
+										":id",
+										"tasks"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "19"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-dGnJzt6gv1nJjX6DJ9RztDWptng\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:11:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized\",\n    \"statusCode\": 401\n}"
+						}
+					]
 				},
 				{
 					"name": "Get all Members With Assigned Tasks",
@@ -376,7 +3323,110 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get all Members With Assigned Tasks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/members",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"members"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1138"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"472-odWTpj+yXVBX3hmcfM6nOwZw45Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:11:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Prajwal:Dev:1\",\n        \"tasks\": [\n            {\n                \"id\": 4,\n                \"description\": \"Test Task 1\",\n                \"dueDate\": \"2023-12-09T00:00:00.000Z\",\n                \"status\": \"not-started\"\n            },\n            {\n                \"id\": 5,\n                \"description\": \"Test Task 2\",\n                \"dueDate\": \"2023-12-09T00:00:00.000Z\",\n                \"status\": \"not-started\"\n            },\n            {\n                \"id\": 6,\n                \"description\": \"Test Task 3\",\n                \"dueDate\": \"2023-12-09T00:00:00.000Z\",\n                \"status\": \"not-started\"\n            },\n            {\n                \"id\": 9,\n                \"description\": \"Test Task 1\",\n                \"dueDate\": \"2023-12-09T00:00:00.000Z\",\n                \"status\": \"not-started\"\n            },\n            {\n                \"id\": 17,\n                \"description\": \"Test Task 17\",\n                \"dueDate\": \"2023-12-09T00:00:00.000Z\",\n                \"status\": \"not-started\"\n            }\n        ]\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Prajwal:Dev:2\",\n        \"tasks\": [\n            {\n                \"id\": 13,\n                \"description\": \"Test Task 10\",\n                \"dueDate\": \"2023-12-31T00:00:00.000Z\",\n                \"status\": \"not-started\"\n            },\n            {\n                \"id\": 14,\n                \"description\": \"Test Task 10\",\n                \"dueDate\": \"2023-12-31T00:00:00.000Z\",\n                \"status\": \"not-started\"\n            }\n        ]\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Prajwal:Dev:3\",\n        \"tasks\": [\n            {\n                \"id\": 16,\n                \"description\": \"Test Task 15\",\n                \"dueDate\": \"2023-12-31T00:00:00.000Z\",\n                \"status\": \"not-started\"\n            }\n        ]\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Prajwal:Dev:1\",\n        \"tasks\": []\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Prajwal:Dev:2\",\n        \"tasks\": [\n            {\n                \"id\": 18,\n                \"description\": \"Task updated\",\n                \"dueDate\": \"2023-12-31T00:00:00.000Z\",\n                \"status\": \"not-started\"\n            }\n        ]\n    },\n    {\n        \"id\": 6,\n        \"name\": \"Prajwal:Dev:3\",\n        \"tasks\": []\n    }\n]"
+						},
+						{
+							"name": "Get all Members With Assigned Tasks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/members",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"members"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-dGnJzt6gv1nJjX6DJ9RztDWptng\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:11:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized\",\n    \"statusCode\": 401\n}"
+						}
+					]
 				},
 				{
 					"name": "Get A member With Assigned Tasks",
@@ -395,12 +3445,245 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "1"
+									"value": "3"
 								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get A member With Assigned Tasks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/members/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"members",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "140"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8c-+lWMK9iA0bDSFJ0seogy3k3VZm4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:12:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"name\": \"Prajwal:Dev:3\",\n    \"tasks\": [\n        {\n            \"id\": 16,\n            \"description\": \"Test Task 15\",\n            \"dueDate\": \"2023-12-31T00:00:00.000Z\",\n            \"status\": \"not-started\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Get A member With Assigned Tasks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/members/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"members",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3asd"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"30-c1OE2x8fMihn1Ipbr2btUGBzvYA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:12:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Member id (Param) must be a number\"\n}"
+						},
+						{
+							"name": "Get A member With Assigned Tasks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/members/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"members",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "26"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29-S/cGy+YBMW/L+OF3+b+Mqbf42VU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:12:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Member with id 26 not found\"\n}"
+						},
+						{
+							"name": "Get A member With Assigned Tasks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/members/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"members",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "26"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-dGnJzt6gv1nJjX6DJ9RztDWptng\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 08:12:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized\",\n    \"statusCode\": 401\n}"
+						}
+					]
 				}
 			],
 			"auth": {
@@ -459,7 +3742,191 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"prajwal\",\r\n    \"password\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "186"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ba-iZsd1B210WNL35v7CfOXpcUkfbQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Dec 2023 08:06:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoicHJhandhbCIsImlhdCI6MTcwMTU5MDc4OSwiZXhwIjoxNzAxNjI2Nzg5fQ.u6Z3PG_BII5BuetjKCgfwSYPLH2i1GmaBXSp-qppkfg\"\n}"
+				},
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"prajwal2\",\r\n    \"password\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2b-dGnJzt6gv1nJjX6DJ9RztDWptng\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Dec 2023 08:06:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthorized\",\n    \"statusCode\": 401\n}"
+				},
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":1,\r\n    \"password\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "80"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"50-QCHwQVppL8M7IfY39bmuFez6nJk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Dec 2023 08:06:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": [\n        \"username must be a string\"\n    ],\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+				}
+			]
 		}
 	],
 	"event": [

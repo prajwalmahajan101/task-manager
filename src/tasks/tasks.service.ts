@@ -103,7 +103,10 @@ export class TasksService {
   }
 
   getById(id: number): Promise<Task | undefined> {
-    return this.taskRepository.findOneBy({ id });
+    return this.taskRepository.findOne({
+      where: { id },
+      relations: ['assignee'],
+    });
   }
 
   getAll(): Promise<Task[]> {

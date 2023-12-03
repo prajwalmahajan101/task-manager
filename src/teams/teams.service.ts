@@ -53,7 +53,8 @@ export class TeamsService {
       where: { id },
       relations: ['members'],
     });
-    if (!team) throw new NotFoundException({ message: 'Team Not Found' });
+    if (!team)
+      throw new NotFoundException({ message: `Team with id ${id} Not Found` });
     return team.members;
   }
 
