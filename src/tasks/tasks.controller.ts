@@ -3,6 +3,7 @@ import {
   Body,
   Controller,
   Get,
+  NotFoundException,
   Param,
   Patch,
   Post,
@@ -65,11 +66,24 @@ export class TasksController {
     return await this.tasksServices.getAll();
   }
 
+  @Get('/:id')
+  async getById(@Param('id') id: number): Promise<Task> {
+    if (isNaN(id))
+      throw new BadRequestException({
+        message: 'Task id (Param) must be a number',
+      });
+    const task = await this.tasksServices.getById(id);
+    if (!task)
+      throw new NotFoundException({ message: `Task with id ${id} Not found` });
+    return task;
+  }
+
   @Patch('/:id')
   async update(
     @Param('id') id: number,
     @Body() updateTaskDto: UpdateTaskDto,
   ): Promise<Task> {
+    console.log(id);
     if (isNaN(id))
       throw new BadRequestException({
         message: 'Task id (Param) must be a number',

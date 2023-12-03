@@ -56,4 +56,15 @@ export class TeamsService {
     if (!team) throw new NotFoundException({ message: 'Team Not Found' });
     return team.members;
   }
+
+  async getById(id: number): Promise<Team | null> {
+    return this.tasksRepository.findOne({
+      where: { id },
+      relations: ['members'],
+    });
+  }
+
+  async getAll(): Promise<Team[]> {
+    return this.tasksRepository.find({ relations: ['members'] });
+  }
 }

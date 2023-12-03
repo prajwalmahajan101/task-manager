@@ -39,6 +39,16 @@ export class MembersService {
     return this.membersRepository.findOneBy({ id });
   }
 
+  getByIdWithTask(id: number): Promise<Member | null> {
+    return this.membersRepository.findOne({
+      where: { id },
+      relations: ['tasks'],
+    });
+  }
+  getAll(): Promise<Member[]> {
+    return this.membersRepository.find({ relations: ['tasks'] });
+  }
+
   async createMultiple(
     members: CreateMembersType,
     team: Team,
@@ -66,21 +76,16 @@ export class MembersService {
   }
 
   async getTasks(id: number): Promise<Task[]> {
-    try {
-      const member: Member | undefined = await this.membersRepository.findOne({
-        where: { id },
-        relations: ['tasks'],
+    const member: Member | undefined = await this.membersRepository.findOne({
+      where: { id },
+      relations: ['tasks'],
+    });
+
+    if (!member) {
+      throw new NotFoundException({
+        message: `Member with id : ${id} not found`,
       });
-
-      if (!member) {
-        throw new NotFoundException({
-          message: `Member with id : ${id} not found`,
-        });
-      }
-
-      return member.tasks;
-    } catch (e) {
-      throw new BadRequestException(e);
     }
+    return member.tasks;
   }
 }

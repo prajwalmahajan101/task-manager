@@ -35,18 +35,22 @@ export class TasksService {
     dueDate: Date,
     assigneeID?: number,
   ): Promise<Task> {
-    try {
-      const task: CreateTaskType = {
-        description,
-        dueDate,
-        status: StatusTypes.NotStarted,
-      };
-      if (assigneeID) {
-        const assignee: Member = await this.membersService.find(assigneeID);
-        if (assignee) {
-          task['assignee'] = assignee;
-        }
+    const task: CreateTaskType = {
+      description,
+      dueDate,
+      status: StatusTypes.NotStarted,
+    };
+    if (assigneeID) {
+      const assignee: Member = await this.membersService.find(assigneeID);
+      if (assignee) {
+        task['assignee'] = assignee;
+      } else {
+        throw new NotFoundException({
+          message: `Assignee with id ${assigneeID} not found`,
+        });
       }
+    }
+    try {
       const ak: InsertResult = await this.taskRepository.insert(task);
       const id: number = ak.generatedMaps[0].id;
       return this.getById(id);
@@ -56,20 +60,20 @@ export class TasksService {
   }
 
   async createMany(tasks: CreateTasksType[]): Promise<CreateTasksReturnType[]> {
-    try {
-      for (const task of tasks) {
-        if (task.assigneeID) {
-          const member: Member | undefined = await this.membersService.find(
-            task.assigneeID,
-          );
-          if (!member)
-            throw new NotFoundException({
-              message: `Member with id :${task.assigneeID}  not found`,
-            });
-          task['assignee'] = member;
-        }
+    for (const task of tasks) {
+      if (task.assigneeID) {
+        const member: Member | undefined = await this.membersService.find(
+          task.assigneeID,
+        );
+        if (!member)
+          throw new NotFoundException({
+            message: `Member with id ${task.assigneeID}  not found`,
+          });
+        task['assignee'] = member;
       }
+    }
 
+    try {
       const ak: InsertResult = await this.taskRepository.insert(tasks);
       return tasks.map(
         (task: CreateTasksType, i: number): CreateTasksReturnType => ({
@@ -107,9 +111,10 @@ export class TasksService {
   }
 
   async update(id: number, data: Partial<Task>): Promise<Task> {
+    const task = await this.getById(id);
+    if (!task)
+      throw new NotFoundException({ message: `Task with id ${id} not found` });
     try {
-      const task = await this.getById(id);
-      if (!task) throw new NotFoundException({ message: 'Task not found' });
       await this.taskRepository.update(id, data);
       return await this.getById(id);
     } catch (e) {
