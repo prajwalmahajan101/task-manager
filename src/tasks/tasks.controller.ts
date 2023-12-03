@@ -66,6 +66,8 @@ export class TasksController {
     @Body() updateTaskDto: Record<string, any>,
   ): Promise<Task> {
     // TODO: Validate Body
+    if (isNaN(id))
+      throw new BadRequestException({ message: 'id must be a number' });
     const data: Partial<Task> = {};
     if (updateTaskDto.description)
       data['description'] = updateTaskDto.description;

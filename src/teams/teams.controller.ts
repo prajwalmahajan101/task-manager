@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
+import {
+  BadRequestException,
+  Body,
+  Controller,
+  Get,
+  Param,
+  Post,
+  UseGuards,
+} from '@nestjs/common';
 import { AuthGuard } from '../auth/auth.guard';
 import { CreateTeamReturnType, TeamsService } from './teams.service';
 import { Member } from '../members/member.entity';
@@ -12,7 +20,6 @@ export class TeamsController {
   async createMember(
     @Body() teamCreateDto: TeamCreateDto,
   ): Promise<CreateTeamReturnType> {
-    //TODO: Add Validation
     return await this.teamsService.create(
       teamCreateDto.name,
       teamCreateDto.members,
@@ -21,7 +28,8 @@ export class TeamsController {
 
   @Get('/:id/members')
   async getMembers(@Param('id') id: number): Promise<Member[]> {
-    id = +id;
+    if (isNaN(id))
+      throw new BadRequestException({ message: 'id must be a number' });
     return await this.teamsService.getMembers(id);
   }
 }
