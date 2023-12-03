@@ -2,6 +2,7 @@ import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '../auth/auth.guard';
 import { CreateTeamReturnType, TeamsService } from './teams.service';
 import { Member } from '../members/member.entity';
+import { TeamCreateDto } from './dto/teamCreateDto';
 
 @Controller('teams')
 @UseGuards(AuthGuard)
@@ -9,7 +10,7 @@ export class TeamsController {
   constructor(private teamsService: TeamsService) {}
   @Post('/')
   async createMember(
-    @Body() teamCreateDto: Record<string, any>,
+    @Body() teamCreateDto: TeamCreateDto,
   ): Promise<CreateTeamReturnType> {
     //TODO: Add Validation
     return await this.teamsService.create(
