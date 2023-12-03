@@ -29,7 +29,9 @@ export class TeamsController {
   @Get('/:id/members')
   async getMembers(@Param('id') id: number): Promise<Member[]> {
     if (isNaN(id))
-      throw new BadRequestException({ message: 'id must be a number' });
+      throw new BadRequestException({
+        message: 'Team id (Param) must be a number',
+      });
     return await this.teamsService.getMembers(id);
   }
 }

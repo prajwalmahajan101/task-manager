@@ -47,12 +47,16 @@ export class TasksController {
     return await this.tasksServices.createMany(tasks);
   }
 
-  @Post('/assign')
-  async assign(@Body() assignTaskDto: AssignTaskDto): Promise<Task> {
-    return await this.tasksServices.assign(
-      assignTaskDto.taskId,
-      assignTaskDto.assignee,
-    );
+  @Post('/:id/assign')
+  async assign(
+    @Param('id') id: number,
+    @Body() assignTaskDto: AssignTaskDto,
+  ): Promise<Task> {
+    if (isNaN(id))
+      throw new BadRequestException({
+        message: 'Task id (Param) must be a number',
+      });
+    return await this.tasksServices.assign(id, assignTaskDto.assignee);
   }
 
   @Get('/')
@@ -67,7 +71,9 @@ export class TasksController {
   ): Promise<Task> {
     // TODO: Validate Body
     if (isNaN(id))
-      throw new BadRequestException({ message: 'id must be a number' });
+      throw new BadRequestException({
+        message: 'Task id (Param) must be a number',
+      });
     const data: Partial<Task> = {};
     if (updateTaskDto.description)
       data['description'] = updateTaskDto.description;

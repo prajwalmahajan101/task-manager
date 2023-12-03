@@ -16,7 +16,9 @@ export class MembersController {
   @Get('/:id/tasks')
   async getTasks(@Param('id') id: number): Promise<Task[]> {
     if (isNaN(id))
-      throw new BadRequestException({ message: 'id must be a number' });
+      throw new BadRequestException({
+        message: 'Member id (Param) must be a number',
+      });
     return await this.membersService.getTasks(id);
   }
 }
