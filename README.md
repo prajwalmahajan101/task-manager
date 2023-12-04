@@ -2,14 +2,14 @@
 
 *This project helps with managing tasks and teams for the organization for various projects.*
 
-## Tech Stack
+## **Tech Stack**
 - **NestJS**
 - **TypeORM**
 - **MySQL**
 - **Docker,Docker Compose (For Running MySQL Server)**
 
 
-## API Endpoints
+## **API Endpoints**
 
 ### ***Create Teams With new Members***
 Creates a new Team with multiple new members. 
