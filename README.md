@@ -136,3 +136,5 @@ Dummy Sign In for User. Needed Due to All other End Points are protected and nee
 - **More Details to Team like number of members, Tech Stack, Manager, Assigned Project, Domain(Dev,Testing...)...**
 - **More Details to Member like Designation, Specialization, Years of Experience...**
 - **Model for Project and Task related to Specific Project**
+- **Add More EndPoints for Member Management like Create Individual Member,  Assign a Members to a Team, Update Details of Members and Deleting Members**
+- **Add More EndPoints for Team Management like Delete team, Remove members from Team, Assign Project To a Team, Creating Sub-Teams**
